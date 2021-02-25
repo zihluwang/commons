@@ -1,4 +1,4 @@
-package cn.vorbote.util;
+package cn.vorbote.commons;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

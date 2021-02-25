@@ -1,4 +1,4 @@
-package cn.vorbote.util;
+package cn.vorbote.commons;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

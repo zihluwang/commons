@@ -1,6 +1,5 @@
 package cn.vorbote.test;
 
-import cn.vorbote.util.CaseUtil;
 import org.junit.Test;
 
 import java.util.UUID;

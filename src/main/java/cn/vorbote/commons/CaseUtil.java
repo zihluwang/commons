@@ -1,4 +1,4 @@
-package cn.vorbote.util;
+package cn.vorbote.commons;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

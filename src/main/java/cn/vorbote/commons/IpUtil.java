@@ -1,4 +1,4 @@
-package cn.vorbote.util;
+package cn.vorbote.commons;
 
 // import lombok.extern.slf4j.Slf4j;
 
