@@ -8,9 +8,144 @@
     <artifactId>commons</artifactId>
     <version>1.0</version>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
+
+    <name>vorbote-common</name>
+    <description>
+        This is the common util made by vorbote.cn,
+        which is also using the domain of
+        vorbote.tech, vorbote.me, vorbote.link
+    </description>
+    <!--打包方式-->
+    <packaging>jar</packaging>
+
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
     </properties>
 
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version2.0</name>
+            <url>http://www.apache.org/licenses/</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <!--托管仓库信息，根据自己的应用情况修改-->
+    <scm>
+        <url>https://github.com/TheodoreHills/commons</url>
+        <connection>https://github.com/TheodoreHills/commons.git</connection>
+        <developerConnection>https://github.com/TheodoreHills/commons</developerConnection>
+    </scm>
+
+    <!--开发者信息-->
+    <developers>
+        <developer>
+            <name>Theodore Hills</name>
+            <email>theodore0126@vorbote.cn</email>
+            <url>https://vorbote.cn</url>
+        </developer>
+    </developers>
+
+    <!--仓库地址配置信息-->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>release</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <id>release</id> <!-- 部署要用到 -->
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <!-- Source -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>2.2.1</version>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar-no-fork</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!-- Javadoc -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>2.9.1</version>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!-- GPG -->
+                        <plugin> <!-- 进行延签 -->
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-gpg-plugin</artifactId>
+                            <version>1.5</version>
+                            <executions>
+                                <execution>
+                                    <phase>verify</phase>
+                                    <goals>
+                                        <goal>sign</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>snapshot</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>release</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 </project>
