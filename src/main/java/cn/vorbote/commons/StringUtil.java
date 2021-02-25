@@ -13,7 +13,7 @@ public class StringUtil {
      * @return 若字符串为空，返回true，否则返回false
      */
     public static boolean IsEmpty(String val) {
-        return val.length() == 0;
+        return val == null || val.length() == 0;
     }
 
     /**
