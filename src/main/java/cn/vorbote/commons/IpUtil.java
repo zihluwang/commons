@@ -2,6 +2,8 @@ package cn.vorbote.commons;
 
 // import lombok.extern.slf4j.Slf4j;
 
+import org.apache.log4j.Logger;
+
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -10,13 +12,13 @@ import java.util.Arrays;
 /**
  * This Util is made up for get ip address, the ip address
  * will only be used in the log.
- * @author vorbote
- * @since 1.1.1.RC
+ * @author TheodoreHills
  */
-// @Slf4j
 public class IpUtil {
 
     private final static String LOCALHOST = "127.0.0.1";
+
+    private final static Logger log = Logger.getLogger(IpUtil.class);
 
     /**
      * Get the IP address from request
@@ -41,8 +43,8 @@ public class IpUtil {
                         inet = InetAddress.getLocalHost();
                         addr = inet.getHostAddress();
                     } catch (UnknownHostException e) {
-                        // log.error("加载本地LOCALHOST时出现异常, Trace: {}", Arrays.toString(e.getStackTrace()));
-                        System.err.printf("加载本地LOCALHOST时出现异常, Trace: [%s]\n", Arrays.toString(e.getStackTrace()));
+                        log.error(String.format("加载本地LOCALHOST时出现异常, Trace: %s", Arrays.toString(e.getStackTrace())));
+                        // System.err.printf("加载本地LOCALHOST时出现异常, Trace: [%s]\n", Arrays.toString(e.getStackTrace()));
                     }
                 }
             }

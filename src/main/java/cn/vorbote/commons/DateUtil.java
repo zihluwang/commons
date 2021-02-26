@@ -1,11 +1,19 @@
 package cn.vorbote.commons;
 
+import org.apache.log4j.Logger;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * DateUtil can transfer unix/java timestamps to Date object.
+ * @author TheodoreHills
+ */
 public class DateUtil {
 
     private static final String DEFAULT_PATTERN = "yyyy-MM-dd hh:mm:ss";
+
+    private final static Logger log = Logger.getLogger(CaseUtil.class);
 
     // Java Timestamp
     public static final String JAVA_TIMESTAMP = "\\d{13}";
@@ -18,6 +26,7 @@ public class DateUtil {
      * @return The Date object if succeed, current date if failed
      */
     public static Date TimestampToDate(String strDate) {
+        log.debug(String.format("Transferring [%s] to Date object.", strDate));
         if (strDate.matches(UNIX_TIMESTAMP)) {
             return new Date(Long.parseLong(strDate) * 1000);
         } else if (strDate.matches(JAVA_TIMESTAMP)) {
@@ -33,7 +42,11 @@ public class DateUtil {
      * @return Converted String
      */
     public static String DateToString(Date date, String pattern) {
-        pattern = pattern == null ? DEFAULT_PATTERN : pattern;
+        if (StringUtil.IsBlank(pattern)) {
+            log.debug("Passed a null value of parameter pattern, using the DEFAULT pattern.");
+            pattern = DEFAULT_PATTERN;
+        }
+        log.debug(String.format("Transferring date object to String as the pattern of %s", pattern));
         SimpleDateFormat dateFormatter = new SimpleDateFormat(pattern);
         return dateFormatter.format(date);
     }

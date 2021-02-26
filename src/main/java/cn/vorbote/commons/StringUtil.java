@@ -2,33 +2,33 @@ package cn.vorbote.commons;
 
 /**
  * This is the string util
- * @author vorbote
- * @since 0.0.1.PRE
+ * @author TheodoreHills
  */
 public class StringUtil {
 
     /**
-     * 判断字符串是否为空
-     * @param val 需要判断的字符串
-     * @return 若字符串为空，返回true，否则返回false
+     * Check the string is empty
+     * @param val The string you want to check
+     * @return True while the string is empty, otherwise return false
      */
     public static boolean IsEmpty(String val) {
         return val == null || val.length() == 0;
     }
 
     /**
-     * 判断字符串是否不为空
-     * @param val 需要判断的字符串
-     * @return 若字符串不为空，返回true，否则返回false
+     * Check the string is not empty
+     * @param val The string you want to check
+     * @return True while the string is not empty, otherwise return false
      */
     public static boolean IsNotEmpty(String val) {
         return !IsEmpty(val);
     }
 
     /**
-     * 判断字符串是否不为空白
-     * @param val 需要判断的字符串
-     * @return 若字符串为空白，则返回为true，否则返回false
+     * Check the string is blank
+     * @param val The string you want to check
+     * @return True while the string is blank, otherwise return false.
+     *         Blank means the string is meaningless, or it only got spaces or tabs in it.
      */
     public static boolean IsBlank(String val) {
         return val.isBlank();

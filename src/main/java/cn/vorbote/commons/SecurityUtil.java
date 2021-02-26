@@ -7,17 +7,16 @@ import java.util.Base64;
 
 /**
  * This tool class can convert String to Base64-String or MD5-String
- * @author vorbote
- * @since 0.0.1.PRE
+ * @author TheodoreHills
  */
 public class SecurityUtil {
 
     /**
-     * 通过MD5方式加密字符串
+     * Encrypt the string via MD5
      * <hr>
-     * <p><b><i>请注意：一旦被MD5加密后无法复原，如果需要复原请使用Base64！</i></b></p>
-     * @param value 待加密的字符串
-     * @return 加密后的字符串
+     * <p><b><i>Be advised: You will not able to recover this encrypted String</i></b></p>
+     * @param value The string will be encrypted
+     * @return The encrypted String
      */
     public static String Md5Encrypt(String value) {
         String result = "";
@@ -34,14 +33,16 @@ public class SecurityUtil {
                 builder.append(str);
             }
             result = builder.toString();
+            // It will get no exception, so ignore it
         } catch (NoSuchAlgorithmException ignored) { }
         return result;
     }
 
     /**
-     * 通过Base64方式加密字符串
-     * @param value 待加密的字符串
-     * @return 加密后的字符串
+     * Encrypt the string via Base64
+     *
+     * @param value The string will be encrypted
+     * @return The encrypted String
      */
     public static String Base64Encode(String value) {
         Base64.Encoder encoder = Base64.getEncoder();
@@ -51,11 +52,10 @@ public class SecurityUtil {
     }
 
     /**
-     * 通过MD5方式加密字符串
-     * <hr>
-     * <p><strong>请注意：一旦被MD5加密后无法复原，如果需要复原请使用Base64！</strong></p>
-     * @param value 待加密的字符串
-     * @return 加密后的字符串
+     * Decode the string via Base64
+     *
+     * @param value The string will be encrypted
+     * @return The encrypted String
      */
     public static String Base64Decode(String value) {
         Base64.Decoder decoder = Base64.getDecoder();

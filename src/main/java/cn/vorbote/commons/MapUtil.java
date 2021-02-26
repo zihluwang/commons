@@ -1,6 +1,6 @@
 package cn.vorbote.commons;
 
-// import lombok.extern.slf4j.Slf4j;
+import org.apache.log4j.Logger;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -11,11 +11,11 @@ import java.util.Map;
 /**
  * This util class can be used for automatic conversion
  * between dictionaries/maps and objects
- * @author vorbote
- * @since 0.0.1.PRE
+ * @author TheodoreHills
  */
-// @Slf4j
 public class MapUtil {
+
+    private final static Logger log = Logger.getLogger(MapUtil.class);
 
     private static final String DT_SHORT = "short";
     private static final String DT_INT = "int";
@@ -123,15 +123,16 @@ public class MapUtil {
 
 
                         default:
-                            // log.error("暂时不支持此类型！");
+                            log.error("Unsupported Type or Class");
+                            // System.err.println("Unsupported Type or Class");
                     }
 
                     // 设置值
                     SetFieldValue(entry.getKey(), obj, entry.getValue());
                 } catch (Exception e) {
                     // logger.warn("hash to object fail", e);
-                    System.err.println("hash to object fail");
-                    // log.error("Hash to Object failure, cause: " + e.getCause());
+                    // System.err.println("hash to object fail");
+                    log.error("Hash to Object failure, cause: " + e.getCause());
                 }
             }
         }
@@ -157,8 +158,8 @@ public class MapUtil {
                 return defaultObject(method.invoke(obj));
             }
         } catch (Exception ex) {
-            // log.error("获取对象失败: {}", ex.getLocalizedMessage());
-            throw new Exception("获取对象值失败!");
+            log.error("Failed getting object: " + ex.getLocalizedMessage());
+            throw new Exception("Failed getting object.");
         }
         return "";
     }
@@ -182,14 +183,14 @@ public class MapUtil {
             }
         } catch (Exception ex) {
             // log.error("设置对象值失败:{}", ex.getCause().toString());
-            throw new Exception("设置对象值失败!");
+            throw new Exception("Failed setting object.");
         }
     }
 
     /**
-     * 获取方法名称
-     * @param prefix 方法名前缀
-     * @param fieldName 字段名
+     * Get the name of method
+     * @param prefix Prefix of method
+     * @param fieldName Name of the field
      */
     private static String getMethodName(String prefix, String fieldName) {
         return prefix + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1);
@@ -197,10 +198,10 @@ public class MapUtil {
 
 
     /**
-     * 根据对象、方法名与参数类型查找方法
-     * @param object 对象
-     * @param methodName 方法名
-     * @param parameterTypes 参数类型
+     * Find methods according to objects, method names and parameter types.
+     * @param object The object
+     * @param methodName The name of the method
+     * @param parameterTypes The type of parameter
      */
     private static Method getDeclaredMethod(Object object, String methodName, Class<?>... parameterTypes) {
         Method method;
@@ -214,7 +215,9 @@ public class MapUtil {
     }
 
     /**
-     * 设置默认值
+     * Get the default value for the passed object.
+     * @param obj The object to be show
+     * @return The string of this obj
      */
     private static String defaultObject(Object obj) {
         if (obj == null) {
