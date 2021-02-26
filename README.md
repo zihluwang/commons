@@ -14,4 +14,9 @@
 > </dependency>
 > ```
 
+
+If you are a user from China (include Mainland of People's Republic of China, Hong Kong Special Administrative Region of People's Republic of China, Macau Special Administrative Region of People's Republic of China and Taiwan Province of People's Republic of China), please choose [Gitee](https://gitee.com/thexinkewonder/commons) first.<br>
+
+如果您是中国区（指中华人民共和国大陆地区、中华人民共和国香港特别行政区、中华人民共和国澳门特别行政区以及中华人民共和国台湾省）的用户，请优先使用[Gitee](https://gitee.com/thexinkewonder/commons)
+
 This dependency included some useful util classes such as `MapUtil` and so on, use them to help you code!
