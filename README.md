@@ -1,5 +1,8 @@
 # Commons dependency
 
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
 ## Important Message
 
 If you are a user from China (include Mainland of People's Republic of China, Hong Kong Special Administrative Region of People's Republic of China, Macau Special Administrative Region of People's Republic of China and Taiwan Province of People's Republic of China), please choose [Gitee](https://gitee.com/thexinkewonder/commons) first.<br>
