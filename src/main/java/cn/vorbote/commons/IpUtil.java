@@ -1,8 +1,6 @@
 package cn.vorbote.commons;
 
-// import lombok.extern.slf4j.Slf4j;
-
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
@@ -14,11 +12,10 @@ import java.util.Arrays;
  * will only be used in the log.
  * @author TheodoreHills
  */
+@Slf4j
 public class IpUtil {
 
     private final static String LOCALHOST = "127.0.0.1";
-
-    private final static Logger log = Logger.getLogger(IpUtil.class);
 
     /**
      * Get the IP address from request

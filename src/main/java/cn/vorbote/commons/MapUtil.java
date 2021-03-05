@@ -1,6 +1,7 @@
 package cn.vorbote.commons;
 
-import org.apache.log4j.Logger;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -13,9 +14,8 @@ import java.util.Map;
  * between dictionaries/maps and objects
  * @author TheodoreHills
  */
+@Slf4j
 public class MapUtil {
-
-    private final static Logger log = Logger.getLogger(MapUtil.class);
 
     private static final String DT_SHORT = "short";
     private static final String DT_INT = "int";

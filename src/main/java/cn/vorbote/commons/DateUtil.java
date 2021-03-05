@@ -1,6 +1,6 @@
 package cn.vorbote.commons;
 
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,11 +9,10 @@ import java.util.Date;
  * DateUtil can transfer unix/java timestamps to Date object.
  * @author TheodoreHills
  */
+@Slf4j
 public class DateUtil {
 
     private static final String DEFAULT_PATTERN = "yyyy-MM-dd hh:mm:ss";
-
-    private final static Logger log = Logger.getLogger(CaseUtil.class);
 
     // Java Timestamp
     public static final String JAVA_TIMESTAMP = "\\d{13}";

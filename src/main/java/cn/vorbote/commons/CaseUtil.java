@@ -1,6 +1,6 @@
 package cn.vorbote.commons;
 
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -9,11 +9,10 @@ import java.util.regex.Pattern;
  * CaseUtil can transfer string to a specific pattern.
  * @author TheodoreHills
  */
+@Slf4j
 public class CaseUtil {
     private static final Pattern AZ_PATTERN = Pattern.compile("[A-Z]");
     private static final Pattern UNDERLINE_PATTERN = Pattern.compile("_([a-z])");
-
-    private final static Logger log = Logger.getLogger(CaseUtil.class);
 
     /**
      * Transfer camel strings to underlined string
