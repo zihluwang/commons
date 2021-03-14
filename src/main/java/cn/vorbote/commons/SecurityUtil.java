@@ -1,11 +1,10 @@
 package cn.vorbote.commons;
 
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
+import javax.crypto.*;
 import java.io.Closeable;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -77,8 +76,9 @@ public class SecurityUtil {
     /**
      * Generate an object of key
      * @return The Key object
+     * @throws NoSuchAlgorithmException This problem should not appear at all
      */
-    private static SecretKey generateKey(byte[] key) throws Exception {
+    private static SecretKey generateKey(byte[] key) throws NoSuchAlgorithmException {
         // 创建安全随机数生成器
         SecureRandom random = SecureRandom.getInstance(RNG_ALGORITHM);
         // 设置 密钥key的字节数组 作为安全随机数生成器的种子
@@ -98,8 +98,12 @@ public class SecurityUtil {
      * @param plainBytes The string you need to encrypt
      * @param key The key you used
      * @return The encoded byte array
+     * @throws Exception It contains <code>NoSuchAlgorithmException,
+     * NoSuchPaddingException, InvalidKeyException,
+     * BadPaddingException, IllegalBlockSizeException</code>, please
+     * debug the problem when occurring an error
      */
-    public static byte[] Encrypt(byte[] plainBytes, byte[] key) throws Exception {
+    public static byte[] AesEncrypt(byte[] plainBytes, byte[] key) throws Exception {
         // 生成密钥对象
         SecretKey secKey = generateKey(key);
 
@@ -113,9 +117,16 @@ public class SecurityUtil {
     }
 
     /**
-     * 数据解密: 密文 -> 明文
+     * Decrypt the encoded string
+     * @param cipherBytes Encoded string value
+     * @param key The key to decode the cipher
+     * @return The byte array of the decoded cipher
+     * @throws Exception It contains <code>NoSuchAlgorithmException,
+     * NoSuchPaddingException, InvalidKeyException,
+     * BadPaddingException, IllegalBlockSizeException</code>, please
+     * debug the problem when occurring an error
      */
-    public static byte[] decrypt(byte[] cipherBytes, byte[] key) throws Exception {
+    public static byte[] AesDecrypt(byte[] cipherBytes, byte[] key) throws Exception {
         // 生成密钥对象
         SecretKey secKey = generateKey(key);
 
@@ -126,16 +137,6 @@ public class SecurityUtil {
 
         // 解密数据, 返回明文
         return cipher.doFinal(cipherBytes);
-    }
-
-    private static void close(Closeable c) {
-        if (c != null) {
-            try {
-                c.close();
-            } catch (IOException e) {
-                // nothing
-            }
-        }
     }
 
 }
