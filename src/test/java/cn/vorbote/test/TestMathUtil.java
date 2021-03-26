@@ -35,4 +35,13 @@ public class TestMathUtil {
         Assert.assertTrue(MathUtil.IsBetween(1, 0, 2));
         Assert.assertFalse(MathUtil.IsBetween(1, 2, 3));
     }
+
+    @Test
+    public void testUtil() {
+        // System.out.println(MathUtil.Factorial(5));
+        testFactorial();
+        testAverage();
+        testSum();
+        testIsBetween();
+    }
 }
