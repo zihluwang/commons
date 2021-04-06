@@ -4,9 +4,16 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collection;
 
+/**
+ * This util class can make some formal calculation.
+ */
 @Slf4j
 @SuppressWarnings("all")
 public final class MathUtil {
+
+    private MathUtil() {
+
+    }
 
     /**
      * Calc the factorial of n

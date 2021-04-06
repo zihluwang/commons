@@ -1,9 +1,17 @@
 package cn.vorbote.commons;
 
+/**
+ * This util class is used to cast some usual data types
+ * to boolean type.
+ */
 public final class BoolUtil {
+
+    private BoolUtil() {
+    }
 
     /**
      * Convert byte to boolean
+     *
      * @param b The value
      * @return True while byte value is not 0
      */
@@ -13,6 +21,7 @@ public final class BoolUtil {
 
     /**
      * Convert char to boolean
+     *
      * @param c The value
      * @return True while char value is not 0 or '0'
      */
@@ -23,6 +32,7 @@ public final class BoolUtil {
 
     /**
      * Convert short to boolean
+     *
      * @param s The value
      * @return True while short value is not 0
      */
@@ -32,6 +42,7 @@ public final class BoolUtil {
 
     /**
      * Convert int to boolean
+     *
      * @param i The value
      * @return True while int value is not 0
      */
@@ -41,6 +52,7 @@ public final class BoolUtil {
 
     /**
      * Convert long to boolean
+     *
      * @param l The value
      * @return True while long value is not 0
      */
@@ -50,6 +62,7 @@ public final class BoolUtil {
 
     /**
      * Convert float to boolean
+     *
      * @param f The value
      * @return True while float value is not 0
      */
@@ -59,6 +72,7 @@ public final class BoolUtil {
 
     /**
      * Convert double to boolean
+     *
      * @param d The value
      * @return True while double value is not 0
      */
@@ -68,6 +82,7 @@ public final class BoolUtil {
 
     /**
      * Convert Object to boolean
+     *
      * @param obj The value
      * @return True while obj value is not null
      */

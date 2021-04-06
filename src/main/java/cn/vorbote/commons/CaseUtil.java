@@ -6,16 +6,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * CaseUtil can transfer string to a specific pattern.
+ * This util class can transfer string to a specific pattern.
+ *
  * @author TheodoreHills
  */
 @Slf4j
 public final class CaseUtil {
+
+    private CaseUtil() {
+    }
+
     private static final Pattern AZ_PATTERN = Pattern.compile("[A-Z]");
     private static final Pattern UNDERLINE_PATTERN = Pattern.compile("_([a-z])");
 
     /**
      * Transfer camel strings to underlined string
+     *
      * @param str the string will be transferred
      * @return the result
      */
@@ -39,6 +45,7 @@ public final class CaseUtil {
 
     /**
      * Transfer underlined string to camel string
+     *
      * @param str the string will be transferred
      * @return the result
      */

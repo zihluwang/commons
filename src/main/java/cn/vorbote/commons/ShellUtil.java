@@ -14,6 +14,10 @@ import java.util.Arrays;
 @Slf4j
 public final class ShellUtil {
 
+    private ShellUtil() {
+
+    }
+
     /**
      * You can run some shell command via this util.
      *

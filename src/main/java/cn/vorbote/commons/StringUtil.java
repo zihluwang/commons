@@ -6,6 +6,10 @@ package cn.vorbote.commons;
  */
 public final class StringUtil {
 
+    private StringUtil() {
+
+    }
+
     /**
      * Check the string is empty
      * @param val The string you want to check

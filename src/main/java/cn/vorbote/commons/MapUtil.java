@@ -12,6 +12,11 @@ import java.util.Map;
 /**
  * This util class can be used for automatic conversion
  * between dictionaries/maps and objects
+ *
+ * P.S: If your data cannot be transferred, please
+ * contact me via email by sending the data's
+ * detail to theodore0126@outlook.com.
+ *
  * @author TheodoreHills
  */
 @Slf4j

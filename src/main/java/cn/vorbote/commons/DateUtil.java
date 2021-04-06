@@ -7,10 +7,15 @@ import java.util.Date;
 
 /**
  * DateUtil can transfer unix/java timestamps to Date object.
+ *
  * @author TheodoreHills
  */
 @Slf4j
 public final class DateUtil {
+
+    private DateUtil() {
+
+    }
 
     private static final String DEFAULT_PATTERN = "yyyy-MM-dd hh:mm:ss";
 
@@ -21,6 +26,7 @@ public final class DateUtil {
 
     /**
      * Transfer timestamp to class java.util.Date
+     *
      * @param strDate timestamp
      * @return The Date object if succeed, current date if failed
      */
@@ -36,7 +42,8 @@ public final class DateUtil {
 
     /**
      * Transfer Date to String
-     * @param date Date object
+     *
+     * @param date    Date object
      * @param pattern The pattern of the string
      * @return Converted String
      */
