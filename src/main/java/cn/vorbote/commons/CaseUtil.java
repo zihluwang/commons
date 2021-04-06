@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
  * @author TheodoreHills
  */
 @Slf4j
-public class CaseUtil {
+public final class CaseUtil {
     private static final Pattern AZ_PATTERN = Pattern.compile("[A-Z]");
     private static final Pattern UNDERLINE_PATTERN = Pattern.compile("_([a-z])");
 

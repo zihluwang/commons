@@ -6,7 +6,7 @@ import java.util.Collection;
 
 @Slf4j
 @SuppressWarnings("all")
-public class MathUtil {
+public final class MathUtil {
 
     /**
      * Calc the factorial of n

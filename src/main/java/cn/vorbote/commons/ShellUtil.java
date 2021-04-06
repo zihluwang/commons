@@ -1,10 +1,18 @@
 package cn.vorbote.commons;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 
-public class ShellUtil {
+/**
+ * This util class is used to run some shell commands
+ * via Java
+ */
+@Slf4j
+public final class ShellUtil {
 
     /**
      * You can run some shell command via this util.
@@ -18,8 +26,10 @@ public class ShellUtil {
             String out = reader.readLine();
             System.out.println(out);
         } catch (IOException e) {
-            System.out.println("An IOException occurred...");
-            e.printStackTrace();
+            // System.out.println("An IOException occurred...");
+            // e.printStackTrace();
+            log.error("An IOException occurred, here is the trace:");
+            log.error(Arrays.toString(e.getStackTrace()));
         }
     }
 

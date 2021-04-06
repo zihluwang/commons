@@ -1,6 +1,6 @@
 package cn.vorbote.commons;
 
-public class BoolUtil {
+public final class BoolUtil {
 
     /**
      * Convert byte to boolean

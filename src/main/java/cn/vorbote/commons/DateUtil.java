@@ -10,7 +10,7 @@ import java.util.Date;
  * @author TheodoreHills
  */
 @Slf4j
-public class DateUtil {
+public final class DateUtil {
 
     private static final String DEFAULT_PATTERN = "yyyy-MM-dd hh:mm:ss";
 

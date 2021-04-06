@@ -4,7 +4,7 @@ package cn.vorbote.commons;
  * This is the string util
  * @author TheodoreHills
  */
-public class StringUtil {
+public final class StringUtil {
 
     /**
      * Check the string is empty

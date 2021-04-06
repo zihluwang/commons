@@ -15,7 +15,7 @@ import java.util.Map;
  * @author TheodoreHills
  */
 @Slf4j
-public class MapUtil {
+public final class MapUtil {
 
     private static final String DT_SHORT = "short";
     private static final String DT_INT = "int";

@@ -1,20 +1,15 @@
 package cn.vorbote.commons;
 
-import javax.crypto.*;
-import java.io.Closeable;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.util.Base64;
 
 /**
  * This tool class can convert String to Base64-String or MD5-String
  * @author TheodoreHills
  */
-public class SecurityUtil {
+public final class SecurityUtil {
 
     private static final int KEY_SIZE = 128;
     private static final String ALGORITHM = "AES";
