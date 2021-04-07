@@ -12,7 +12,6 @@ import java.util.Map;
 /**
  * This util class can be used for automatic conversion
  * between dictionaries/maps and objects
- *
  * P.S: If your data cannot be transferred, please
  * contact me via email by sending the data's
  * detail to theodore0126@outlook.com.
@@ -22,6 +21,9 @@ import java.util.Map;
 @Slf4j
 public final class MapUtil {
 
+    private MapUtil() {
+    }
+
     private static final String DT_SHORT = "short";
     private static final String DT_INT = "int";
     private static final String DT_LONG = "long";
@@ -30,7 +32,7 @@ public final class MapUtil {
     private static final String DT_BOOL = "boolean";
     private static final String DT_FLOAT = "float";
     private static final String DT_DOUBLE = "double";
-    
+
     private static final String CLASS_STRING = "class java.lang.String";
     private static final String CLASS_BIG_DECIMAL = "class java.math.BigDecimal";
     private static final String CLASS_DATE = "class java.util.Date";
@@ -46,12 +48,13 @@ public final class MapUtil {
 
     /**
      * Dynamically convert object to dictionary/map
+     *
      * @param obj Objects that need to be converted to Map
      * @return Converted HashMap
      * @throws Exception Any Exception could be generated while converting
      */
     public static Map<String, Object> SetMap(Object obj) throws Exception {
-        if(obj == null){
+        if (obj == null) {
             return null;
         }
 
@@ -70,6 +73,7 @@ public final class MapUtil {
 
     /**
      * Convert Map to Object
+     *
      * @param map Map data to be convert
      * @param obj Target object should be explicitly given to a special
      *            instantiated object
@@ -147,12 +151,13 @@ public final class MapUtil {
     /**
      * Get the specified field value, equivalent to
      * <code>obj.getFieldName</code>
+     *
      * @param fieldName Field name
-     * @param obj object
+     * @param obj       object
      * @return A string of the object corresponding
-     *  to the object value
+     * to the object value
      * @throws Exception Abnormalities that may appear, such as
-     *  <code>java.lang.NullPointerException</code>, etc.
+     *                   <code>java.lang.NullPointerException</code>, etc.
      */
     public static String GetFieldValue(String fieldName, Object obj) throws Exception {
         try {
@@ -173,8 +178,9 @@ public final class MapUtil {
     /**
      * Set the specified field value, which is equivalent to
      * <code>obj.setFieldName(fieldValue)</code>
-     * @param fieldName Field name
-     * @param obj The object will be set
+     *
+     * @param fieldName  Field name
+     * @param obj        The object will be set
      * @param fieldValue Field Value
      * @throws Exception Any Exception could be generated while converting
      */
@@ -194,7 +200,8 @@ public final class MapUtil {
 
     /**
      * Get the name of method
-     * @param prefix Prefix of method
+     *
+     * @param prefix    Prefix of method
      * @param fieldName Name of the field
      */
     private static String getMethodName(String prefix, String fieldName) {
@@ -204,8 +211,9 @@ public final class MapUtil {
 
     /**
      * Find methods according to objects, method names and parameter types.
-     * @param object The object
-     * @param methodName The name of the method
+     *
+     * @param object         The object
+     * @param methodName     The name of the method
      * @param parameterTypes The type of parameter
      */
     private static Method getDeclaredMethod(Object object, String methodName, Class<?>... parameterTypes) {
@@ -214,13 +222,15 @@ public final class MapUtil {
             try {
                 method = clazz.getDeclaredMethod(methodName, parameterTypes);
                 return method;
-            } catch (Exception ignored) { }
+            } catch (Exception ignored) {
+            }
         }
         return null;
     }
 
     /**
      * Get the default value for the passed object.
+     *
      * @param obj The object to be show
      * @return The string of this obj
      */
