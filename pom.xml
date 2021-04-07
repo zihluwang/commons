@@ -13,7 +13,7 @@
     <groupId>cn.vorbote</groupId>
     <artifactId>commons</artifactId>
     <version>1.4.0</version>
-    <url>https://github.com/TheodoreHills/commons</url>
+    <url>https://plugins.vorbote.cn/</url>
 
     <dependencies>
         <dependency>
