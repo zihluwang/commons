@@ -139,8 +139,6 @@ public final class MapUtil {
                     // 设置值
                     SetFieldValue(entry.getKey(), obj, entry.getValue());
                 } catch (Exception e) {
-                    // logger.warn("hash to object fail", e);
-                    // System.err.println("hash to object fail");
                     log.error("Hash to Object failure, cause: " + e.getCause());
                 }
             }
