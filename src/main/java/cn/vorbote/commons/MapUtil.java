@@ -132,7 +132,7 @@ public final class MapUtil {
 
 
                         default:
-                            log.error("Unsupported Type or Class");
+                            log.error("Unsupported Type or Class: {}", field.getGenericType().toString());
                             // System.err.println("Unsupported Type or Class");
                     }
 
