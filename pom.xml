@@ -65,7 +65,7 @@
     <description>
         This is the common util made by Theodore Hills, includes some common utils.
     </description>
-    <!--打包方式-->
+
     <packaging>jar</packaging>
 
     <properties>
@@ -84,14 +84,12 @@
         </license>
     </licenses>
 
-    <!--托管仓库信息，根据自己的应用情况修改-->
     <scm>
-        <url>https://github.com/TheodoreHills/commons</url>
-        <connection>https://github.com/TheodoreHills/commons.git</connection>
-        <developerConnection>https://github.com/TheodoreHills/commons</developerConnection>
+        <url>https://github.com/vorbote/commons</url>
+        <connection>https://github.com/vorbote/commons.git</connection>
+        <developerConnection>https://github.com/vorbote/commons</developerConnection>
     </scm>
 
-    <!--开发者信息-->
     <developers>
         <developer>
             <name>Theodore Hills</name>
@@ -100,7 +98,6 @@
         </developer>
     </developers>
 
-    <!--仓库地址配置信息-->
     <distributionManagement>
         <snapshotRepository>
             <id>snapshot</id>
@@ -114,10 +111,9 @@
 
     <profiles>
         <profile>
-            <id>release</id> <!-- 部署要用到 -->
+            <id>release</id>
             <build>
                 <plugins>
-                    <!-- Source -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
