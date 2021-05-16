@@ -129,7 +129,7 @@ public final class HashUtil {
         if (data == null || key == null) {
             return null;
         }
-        return new String(rc4Base(CastHexStringToBytes(data), key));
+        return new String(rc4Base(castHexStringToBytes(data), key));
     }
 
     /**
@@ -161,7 +161,7 @@ public final class HashUtil {
         if (data == null || key == null) {
             return null;
         }
-        return CastToHexString(asString(Objects.requireNonNull(EncryptToByteStream(EncryptMethod.RC4, data, key))));
+        return castToHexString(asString(Objects.requireNonNull(EncryptToByteStream(EncryptMethod.RC4, data, key))));
 
     }
 
@@ -212,7 +212,7 @@ public final class HashUtil {
      * @param s The source string.
      * @return The hex string of the origin.
      */
-    private static String CastToHexString(String s) {
+    private static String castToHexString(String s) {
         StringBuilder str = new StringBuilder();
 
         for (int i = 0; i < s.length(); i++) {
@@ -234,7 +234,7 @@ public final class HashUtil {
      * @param src The hex string.
      * @return The byte stream of this string.
      */
-    private static byte[] CastHexStringToBytes(String src) {
+    private static byte[] castHexStringToBytes(String src) {
         int size = src.length();
         byte[] ret = new byte[size / 2];
         byte[] tmp = src.getBytes();
@@ -242,7 +242,6 @@ public final class HashUtil {
             ret[i] = uniteBytes(tmp[i * 2], tmp[i * 2 + 1]);
         }
         return ret;
-
     }
 
     /**
