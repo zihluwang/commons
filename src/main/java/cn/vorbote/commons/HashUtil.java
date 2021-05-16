@@ -153,6 +153,7 @@ public final class HashUtil {
     /**
      * Encrypt a string to a HexString
      *
+     * @param method The specified method.
      * @param data The origin data.
      * @param key  The key.
      * @return The encrypted string.
