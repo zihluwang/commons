@@ -29,9 +29,9 @@ public final class CaseUtil {
         // 正则匹配大写字符转成小写并在前面加上下划线
         log.debug(String.format("Transferring [%s] to Underline Pattern", str));
         Matcher matcher = AZ_PATTERN.matcher(str);
-        StringBuffer sb = new StringBuffer(str);
+        StringBuilder sb = new StringBuilder(str);
         if (matcher.find()) {
-            sb = new StringBuffer();
+            sb = new StringBuilder();
             // 将当前匹配的子串替换成指定字符串，并且将替换后的子串及之前到上次匹配的子串之后的字符串添加到StringBuffer对象中
             // 正则之前的字符和被替换的字符
             matcher.appendReplacement(sb, "_" + matcher.group(0).toLowerCase());
@@ -53,9 +53,9 @@ public final class CaseUtil {
         // 正则匹配下划线及后一个字符，删除下划线并将匹配的字符转成大写
         log.debug(String.format("Transferring [%s] to LowerCamel Pattern", str));
         Matcher matcher = UNDERLINE_PATTERN.matcher(str);
-        StringBuffer sb = new StringBuffer(str);
+        StringBuilder sb = new StringBuilder(str);
         if (matcher.find()) {
-            sb = new StringBuffer();
+            sb = new StringBuilder();
             // 将当前匹配的子串替换成指定字符串，并且将替换后的子串及之前到上次匹配的子串之后的字符串添加到StringBuffer对象中
             // 正则之前的字符和被替换的字符
             matcher.appendReplacement(sb, matcher.group(1).toUpperCase());

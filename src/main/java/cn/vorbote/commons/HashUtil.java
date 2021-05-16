@@ -112,7 +112,7 @@ public final class HashUtil {
         if (data == null || key == null) {
             return null;
         }
-        return asString(Rc4Base(data, key));
+        return asString(rc4Base(data, key));
     }
 
     /**
@@ -129,7 +129,7 @@ public final class HashUtil {
         if (data == null || key == null) {
             return null;
         }
-        return new String(Rc4Base(CastHexStringToBytes(data), key));
+        return new String(rc4Base(CastHexStringToBytes(data), key));
     }
 
     /**
@@ -147,7 +147,7 @@ public final class HashUtil {
             return null;
         }
         byte[] b_data = data.getBytes();
-        return Rc4Base(b_data, key);
+        return rc4Base(b_data, key);
     }
 
     /**
@@ -268,7 +268,7 @@ public final class HashUtil {
      * @param m_key The key.
      * @return The byte stream.
      */
-    private static byte[] Rc4Base(byte[] input, String m_key) {
+    private static byte[] rc4Base(byte[] input, String m_key) {
         int x = 0;
         int y = 0;
         byte[] key = initKey(m_key);
