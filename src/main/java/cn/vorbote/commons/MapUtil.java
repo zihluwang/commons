@@ -132,14 +132,14 @@ public final class MapUtil {
 
 
                         default:
-                            log.error("Unsupported Type or Class: {}", field.getGenericType().toString());
+                            log.error("Unsupported Type or Class: {}", field.getGenericType());
                             // System.err.println("Unsupported Type or Class");
                     }
 
                     // 设置值
                     SetFieldValue(entry.getKey(), obj, entry.getValue());
                 } catch (Exception e) {
-                    log.error("Hash to Object failure, cause: " + e.getCause());
+                    log.error("Map to Object failed.");
                 }
             }
         }
