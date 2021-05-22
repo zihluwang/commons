@@ -60,7 +60,7 @@ public final class MathUtil {
      * @param num       The number
      * @param noLess    The <code>num</code> should not less than this number.
      * @param noGreater The <code>num</code> should not bigger than this number.
-     * @return True while num >= noLess and num <= noGreater
+     * @return True while num no less than noLess and num no graeter than noGreater.
      */
     public static boolean IsBetween(Number num, Number noLess, Number noGreater) {
         return num.doubleValue() <= noGreater.doubleValue() &&
