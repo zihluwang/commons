@@ -3,6 +3,7 @@ package cn.vorbote.commons;
 import lombok.extern.slf4j.Slf4j;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -55,5 +56,41 @@ public final class DateUtil {
         log.debug(String.format("Transferring date object to String as the pattern of %s", pattern));
         SimpleDateFormat dateFormatter = new SimpleDateFormat(pattern);
         return dateFormatter.format(date);
+    }
+
+    /**
+     * Create a date instance by {@code calendar}.
+     *
+     * @param year  The year num such as 2021.
+     * @param month The month num such as {@code Calendar.JANUARY}
+     * @param date  The date in that month.
+     * @return The date instance created by the specified date.
+     */
+    public static Date GetDate(int year, int month, int date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month, date);
+        return calendar.getTime();
+    }
+
+    /**
+     * Create a date instance by {@code calendar}.
+     *
+     * @param calendar The calendar instance.
+     * @return The date instance created by the specified date.
+     */
+    public static Date GetDate(Calendar calendar) {
+        return calendar.getTime();
+    }
+
+    /**
+     * Get the calendar instance by a date instance.
+     *
+     * @param date The date instance.
+     * @return The calendar instance.
+     */
+    public static Calendar GetCalendar(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return calendar;
     }
 }
