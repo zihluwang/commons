@@ -12,7 +12,7 @@
 
     <groupId>cn.vorbote</groupId>
     <artifactId>commons</artifactId>
-    <version>1.4.4</version>
+    <version>1.5.0</version>
     <url>https://plugins.vorbote.cn/</url>
 
     <name>vorbote-common</name>
