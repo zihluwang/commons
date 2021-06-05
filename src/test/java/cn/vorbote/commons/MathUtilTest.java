@@ -20,7 +20,7 @@ public class MathUtilTest {
 
     @Test
     public void toOctalString() {
-        String s = MathUtil.ToOctalString(200);
+        String s = MathUtil.ToBinaryString(10);
         System.out.println(s);
     }
 }

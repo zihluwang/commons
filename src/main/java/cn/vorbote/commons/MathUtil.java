@@ -126,7 +126,10 @@ public final class MathUtil {
             }
         }
         StringBuilder builder = new StringBuilder("0x");
-        stack.forEach(builder::append);
+        for ( ; !stack.isEmpty(); ) {
+            var e = stack.pop();
+            builder.append(e);
+        }
         if (toUpper) {
             return builder.toString().toUpperCase();
         } else {
@@ -141,7 +144,10 @@ public final class MathUtil {
             stack.push(String.valueOf(temp));
         }
         StringBuilder builder = new StringBuilder("0b");
-        stack.forEach(builder::append);
+        for ( ; !stack.isEmpty(); ) {
+            var e = stack.pop();
+            builder.append(e);
+        }
         return builder.toString();
     }
 
@@ -152,7 +158,10 @@ public final class MathUtil {
             stack.push(String.valueOf(temp));
         }
         StringBuilder builder = new StringBuilder("0");
-        stack.forEach(builder::append);
+        for ( ; !stack.isEmpty(); ) {
+            var e = stack.pop();
+            builder.append(e);
+        }
         return builder.toString();
     }
 }
