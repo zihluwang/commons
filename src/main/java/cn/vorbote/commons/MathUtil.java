@@ -9,7 +9,6 @@ import java.util.Stack;
  * This util class can make some formal calculation.
  */
 @Slf4j
-@SuppressWarnings("all")
 public final class MathUtil {
 
     private MathUtil() {
@@ -126,7 +125,7 @@ public final class MathUtil {
             }
         }
         StringBuilder builder = new StringBuilder("0x");
-        for ( ; !stack.isEmpty(); ) {
+        while (!stack.isEmpty()) {
             var e = stack.pop();
             builder.append(e);
         }
@@ -150,7 +149,7 @@ public final class MathUtil {
             stack.push(String.valueOf(temp));
         }
         StringBuilder builder = new StringBuilder("0b");
-        for ( ; !stack.isEmpty(); ) {
+        while (!stack.isEmpty()) {
             var e = stack.pop();
             builder.append(e);
         }
@@ -170,7 +169,7 @@ public final class MathUtil {
             stack.push(String.valueOf(temp));
         }
         StringBuilder builder = new StringBuilder("0");
-        for ( ; !stack.isEmpty(); ) {
+        while (!stack.isEmpty()) {
             var e = stack.pop();
             builder.append(e);
         }
