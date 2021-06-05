@@ -3,6 +3,7 @@ package cn.vorbote.commons.enums;
 /**
  * This is a enum class for {@code HashUtil} and supplied
  * all supported methods by the {@code HashUtil}.
+ *
  * @author vorbote theodore0126@outlook.com
  * @since 1.4.2
  */
@@ -21,7 +22,8 @@ public enum EncryptMethod {
         this.value = value;
     }
 
-    EncryptMethod() { }
+    EncryptMethod() {
+    }
 
     /**
      * This method helps you get the value of the enum. Deprecated
