@@ -7,14 +7,14 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * DateUtil can transfer unix/java timestamps to Date object.
+ * TimeUtil can transfer unix/java timestamps to Date object.
  *
  * @author TheodoreHills
  */
 @Slf4j
-public final class DateUtil {
+public final class TimeUtil {
 
-    private DateUtil() {
+    private TimeUtil() {
 
     }
 
@@ -92,5 +92,33 @@ public final class DateUtil {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         return calendar;
+    }
+
+    /**
+     * Get the current timestamp.
+     *
+     * @return The current timestamp.
+     */
+    private static long javaTimestamp() {
+        return System.currentTimeMillis();
+    }
+
+    /**
+     * Get the current timestamp.
+     *
+     * @return The current timestamp.
+     */
+    private static long unixTimestamp() {
+        return javaTimestamp() / 1000;
+    }
+
+    /**
+     * Get the timestamp.
+     *
+     * @param isUnixTimestamp If you need unit timestamp, then put a true in it.
+     * @return The timestamp in specific format.
+     */
+    public static long Now(boolean isUnixTimestamp) {
+        return isUnixTimestamp ? unixTimestamp() : javaTimestamp();
     }
 }

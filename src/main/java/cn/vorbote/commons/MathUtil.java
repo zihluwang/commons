@@ -137,6 +137,12 @@ public final class MathUtil {
         }
     }
 
+    /**
+     * Transformat a decimal number to binary number.
+     *
+     * @param value   The number with decimal format.
+     * @return The binary string of the number.
+     */
     public static String ToBinaryString(int value) {
         Stack<String> stack = new Stack<>();
         for (; value != 0; value /= 2) {
@@ -151,6 +157,12 @@ public final class MathUtil {
         return builder.toString();
     }
 
+    /**
+     * Transformat a decimal number to octal number.
+     *
+     * @param value   The number with decimal format.
+     * @return The octal string of the number.
+     */
     public static String ToOctalString(int value) {
         Stack<String> stack = new Stack<>();
         for (; value != 0; value /= 8) {

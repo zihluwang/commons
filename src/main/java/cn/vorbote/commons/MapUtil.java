@@ -127,7 +127,7 @@ public final class MapUtil {
                             entry.setValue(BigDecimal.valueOf(Double.parseDouble(entryValue)));
                             break;
                         case CLASS_DATE:
-                            entry.setValue(DateUtil.TimestampToDate(entryValue));
+                            entry.setValue(TimeUtil.TimestampToDate(entryValue));
                             break;
 
 
