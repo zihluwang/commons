@@ -113,6 +113,15 @@ public final class TimeUtil {
     }
 
     /**
+     * Get the unix timestamp.
+     *
+     * @return The timestamp in specific format.
+     */
+    public static long Now() {
+        return Now(false);
+    }
+
+    /**
      * Get the timestamp.
      *
      * @param isUnixTimestamp If you need unit timestamp, then put a true in it.
