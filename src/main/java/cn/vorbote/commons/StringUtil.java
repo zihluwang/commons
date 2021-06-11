@@ -39,6 +39,9 @@ public final class StringUtil {
      * Blank means the string is meaningless, or it only got spaces or tabs in it.
      */
     public static boolean IsBlank(String val) {
+        if (val == null) {
+            return true;
+        }
         val = val.trim();
         return IsEmpty(val);
     }
