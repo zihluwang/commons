@@ -158,7 +158,7 @@ public final class HashUtil {
      * @param key  The key.
      * @return The encrypted string.
      */
-    public static String Encrypt(EncryptMethod method, String data, String key) {
+    public static String Encrypt(EncryptMethod method, String key, String data) {
         if (data == null || key == null) {
             return null;
         }
