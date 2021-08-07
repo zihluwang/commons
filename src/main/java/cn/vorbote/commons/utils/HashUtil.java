@@ -1,4 +1,4 @@
-package cn.vorbote.commons;
+package cn.vorbote.commons.utils;
 
 import cn.vorbote.commons.enums.EncryptMethod;
 import cn.vorbote.commons.except.UnsupportedAlgorithmException;

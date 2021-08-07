@@ -1,4 +1,4 @@
-package cn.vorbote.commons;
+package cn.vorbote.commons.utils;
 
 /**
  * This is the string util

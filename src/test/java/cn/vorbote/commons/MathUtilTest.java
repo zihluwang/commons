@@ -1,8 +1,7 @@
 package cn.vorbote.commons;
 
+import cn.vorbote.commons.utils.MathUtil;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class MathUtilTest {
 

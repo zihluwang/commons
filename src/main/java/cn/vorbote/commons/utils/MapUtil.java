@@ -1,4 +1,4 @@
-package cn.vorbote.commons;
+package cn.vorbote.commons.utils;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,7 +35,6 @@ public final class MapUtil {
 
     private static final String CLASS_STRING = "class java.lang.String";
     private static final String CLASS_BIG_DECIMAL = "class java.math.BigDecimal";
-    private static final String CLASS_DATE = "class java.util.Date";
     private static final String CLASS_INTEGER = "class java.lang.Integer";
     private static final String CLASS_SHORT = "class java.lang.Short";
     private static final String CLASS_LONG = "class java.lang.Long";
@@ -126,10 +125,6 @@ public final class MapUtil {
                         case CLASS_BIG_DECIMAL:
                             entry.setValue(BigDecimal.valueOf(Double.parseDouble(entryValue)));
                             break;
-                        case CLASS_DATE:
-                            entry.setValue(TimeUtil.TimestampToDate(entryValue));
-                            break;
-
 
                         default:
                             log.error("Unsupported Type or Class: {}", field.getGenericType());
