@@ -2,6 +2,8 @@ package cn.vorbote.commons.consts;
 
 /**
  * This is the list of supported JWT Hash Algorithms.
+ *
+ * @author vorbote thills@vorbote.cn
  */
 public enum JwtAlgorithm {
     HS256, HS384, HS512,
