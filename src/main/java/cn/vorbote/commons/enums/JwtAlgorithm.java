@@ -1,4 +1,4 @@
-package cn.vorbote.commons.consts;
+package cn.vorbote.commons.enums;
 
 /**
  * This is the list of supported JWT Hash Algorithms.
