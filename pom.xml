@@ -4,6 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
+
+        <project.version>2.0.2.RELEASE</project.version>
+    </properties>
+
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -12,7 +22,7 @@
 
     <groupId>cn.vorbote</groupId>
     <artifactId>commons</artifactId>
-    <version>2.0.2.RELEASE</version>
+    <version>${project.version}</version>
     <url>https://plugins.vorbote.cn/</url>
 
     <name>VorBotE :: Commons</name>
@@ -63,14 +73,6 @@
     </dependencies>
 
     <packaging>jar</packaging>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
-    </properties>
 
     <licenses>
         <license>
