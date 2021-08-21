@@ -18,8 +18,8 @@ public enum TimeUnit {
     // Day
     DAY(24 * HOUR.Millis(), 24 * HOUR.Second());
 
-    private int millis;
-    private int second;
+    private final int millis;
+    private final int second;
 
     /**
      * Create a value with millisecond.
